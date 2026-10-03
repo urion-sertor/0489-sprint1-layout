@@ -52,7 +52,7 @@
             android:layout_width="160dp"
             android:layout_height="0dp"
             android:contentDescription="Doctor"
-            android:scaleType="fitBottom"
+            android:scaleType="fitEnd"
             android:src="@drawable/ic_doctor_header"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
