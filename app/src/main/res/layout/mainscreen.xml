@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -38,52 +42,318 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:text="Our Services"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:text="See All"
+            android:textColor="#00A2E8"
+            app:layout_constraintBottom_toBottomOf="@id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView" />
+
+        <ImageButton
+            android:id="@+id/btnEstetoscopio"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Estetoscopio"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/estetoscopio"
+            app:layout_constraintEnd_toStartOf="@id/btnPastillas"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+
+        <ImageButton
+            android:id="@+id/btnPastillas"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Pastillas"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pastillas"
+            app:layout_constraintBottom_toBottomOf="@id/btnEstetoscopio"
+            app:layout_constraintEnd_toStartOf="@id/btnAmbulancia"
+            app:layout_constraintStart_toEndOf="@id/btnEstetoscopio"
+            app:layout_constraintTop_toTopOf="@id/btnEstetoscopio" />
+
+        <ImageButton
+            android:id="@+id/btnAmbulancia"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Ambulancia"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ambulancia"
+            app:layout_constraintBottom_toBottomOf="@id/btnEstetoscopio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnPastillas"
+            app:layout_constraintTop_toTopOf="@id/btnEstetoscopio" />
+
+        <TextView
+            android:id="@+id/consultation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consultation"
+            app:layout_constraintEnd_toEndOf="@id/btnEstetoscopio"
+            app:layout_constraintStart_toStartOf="@id/btnEstetoscopio"
+            app:layout_constraintTop_toBottomOf="@id/btnEstetoscopio" />
+
+        <TextView
+            android:id="@+id/medicines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicines"
+            app:layout_constraintEnd_toEndOf="@id/btnPastillas"
+            app:layout_constraintStart_toStartOf="@id/btnPastillas"
+            app:layout_constraintTop_toBottomOf="@id/btnPastillas" />
+
+        <TextView
+            android:id="@+id/ambulance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ambulance"
+            app:layout_constraintEnd_toEndOf="@id/btnAmbulancia"
+            app:layout_constraintStart_toStartOf="@id/btnAmbulancia"
+            app:layout_constraintTop_toBottomOf="@id/btnAmbulancia" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="30dp"
             android:text="Appointment"
-            app:layout_constraintTop_toBottomOf="@id/textView"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consultation" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAppointment"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="170dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="28dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintTop_toBottomOf="@id/textView2"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
             app:layout_constraintBottom_toTopOf="@id/bottomAppBar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/textView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="365dp"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/appointmentLine"
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:background="#00A2E8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/appointment_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Appointment date"
+                    android:textColor="#9E9E9E"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/more"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="⋮"
+                    android:textColor="#7F8C9B"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="3dp"
+                    android:text="◷"
+                    android:textColor="#222222"
+                    android:textSize="26sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/appointment_date" />
+
+                <TextView
+                    android:id="@+id/fecha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="Wed Nov 20  •  8:00 - 8:30 AM"
+                    android:textColor="#222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/clock"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toTopOf="@id/clock" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="#EEEEEE"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clock" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="Doctor"
+                    android:background="@drawable/bg_icon_circle"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:srcCompat="@drawable/doctorpequeño" />
+
+                <TextView
+                    android:id="@+id/dc_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="Dr. Guido Mengueche"
+                    android:textColor="#222222"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageView3"
+                    app:layout_constraintTop_toTopOf="@id/imageView3" />
+
+                <TextView
+                    android:id="@+id/dc_speciality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Uriologo"
+                    android:textColor="#9E9E9E"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/dc_name"
+                    app:layout_constraintTop_toBottomOf="@id/dc_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
+            android:backgroundTint="#FFFFFF"
+            app:elevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/More"
-            android:layout_width="45dp"
-            android:layout_height="53dp"
-            android:text="+"
-            app:iconTint="@color/black"
-            app:layout_constraintTop_toTopOf="@id/bottomAppBar"
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Home"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home"
             app:layout_constraintBottom_toBottomOf="@id/bottomAppBar"
+            app:layout_constraintEnd_toStartOf="@id/btnNoticias"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="@id/bottomAppBar"
-            app:layout_constraintEnd_toEndOf="@id/bottomAppBar" />
+            app:layout_constraintTop_toTopOf="@id/bottomAppBar" />
+
+        <ImageButton
+            android:id="@+id/btnNoticias"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Noticias"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/noticias"
+            app:layout_constraintBottom_toBottomOf="@id/bottomAppBar"
+            app:layout_constraintEnd_toStartOf="@id/btnMas"
+            app:layout_constraintStart_toEndOf="@id/btnHome"
+            app:layout_constraintTop_toTopOf="@id/bottomAppBar" />
+
+        <ImageButton
+            android:id="@+id/btnMas"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Más"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mas"
+            app:layout_constraintBottom_toBottomOf="@id/bottomAppBar"
+            app:layout_constraintEnd_toStartOf="@id/btnMensajes"
+            app:layout_constraintStart_toEndOf="@id/btnNoticias"
+            app:layout_constraintTop_toTopOf="@id/bottomAppBar" />
+
+        <ImageButton
+            android:id="@+id/btnMensajes"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Mensajes"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mensajes"
+            app:layout_constraintBottom_toBottomOf="@id/bottomAppBar"
+            app:layout_constraintEnd_toStartOf="@id/btnPerfil"
+            app:layout_constraintStart_toEndOf="@id/btnMas"
+            app:layout_constraintTop_toTopOf="@id/bottomAppBar" />
+
+        <ImageButton
+            android:id="@+id/btnPerfil"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_circle"
+            android:contentDescription="Perfil"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="@id/bottomAppBar"
+            app:layout_constraintEnd_toEndOf="@id/bottomAppBar"
+            app:layout_constraintStart_toEndOf="@id/btnMensajes"
+            app:layout_constraintTop_toTopOf="@id/bottomAppBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
