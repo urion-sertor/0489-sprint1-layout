@@ -7,7 +7,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/header_bg"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -22,10 +22,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/header_bg"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgAvatar"
@@ -36,16 +38,16 @@
             android:contentDescription="User Avatar"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_avatar"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
         <ImageButton
             android:id="@+id/btnNotification"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="24dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
             android:background="@drawable/bg_circle_white"
             android:contentDescription="Notifications"
             android:padding="8dp"
@@ -72,10 +74,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="25dp"
             android:text="@string/welcome"
             android:textColor="@color/text_primary"
-            android:textSize="22sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgAvatar" />
@@ -87,7 +89,7 @@
             android:layout_marginStart="24dp"
             android:text="@string/user_name"
             android:textColor="@color/text_primary"
-            android:textSize="26sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
@@ -100,7 +102,7 @@
             android:layout_marginTop="4dp"
             android:text="@string/greeting_subtitle"
             android:textColor="@color/text_secondary"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
@@ -109,8 +111,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bg_urgent_care_btn"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="16dp"
@@ -142,7 +146,8 @@
         android:id="@+id/niko"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFFFFF"
+        android:layout_marginTop="-24dp"
+        android:background="@drawable/bg_sheet_rounded"
         app:layout_constraintTop_toBottomOf="@id/guideline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,22 +158,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="20dp"
             android:text="Our Services"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/see_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="28dp"
-            android:text="See All"
-            android:textColor="#00A2E8"
-            app:layout_constraintBottom_toBottomOf="@id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textView" />
 
         <ImageButton
             android:id="@+id/btnEstetoscopio"
@@ -250,6 +244,17 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/consultation" />
+
+        <TextView
+            android:id="@+id/see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:text="See All"
+            android:textColor="#00A2E8"
+            app:layout_constraintBottom_toBottomOf="@id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView2" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAppointment"
@@ -391,6 +396,7 @@
             android:layout_height="64dp"
             android:backgroundTint="#FFFFFF"
             app:elevation="8dp"
+            tools:ignore="BottomAppBar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
